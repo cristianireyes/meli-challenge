@@ -1,8 +1,15 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { FunctionComponent } from 'react';
+import type { AppProps } from 'next/app';
+import { Navbar } from 'components/navbar';
+import 'styles/globals.scss';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => (
+  <div className="container">
+    <Navbar />
+    <div className="content">
+      <Component {...pageProps} />
+    </div>
+  </div>
+);
 
-export default MyApp
+export default App;
