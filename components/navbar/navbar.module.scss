@@ -12,6 +12,15 @@
   align-items: center;
   margin: 0 auto;
   padding: 0.5rem 7rem;
+  transition: 0.25s all linear;
+
+  @media screen and (max-width: $mobile-screen) {
+    padding-inline: 1rem;
+  }
+
+  @media screen and (min-width: $desktop-screen) {
+    padding-inline: 15rem;
+  }
 }
 
 .logo {

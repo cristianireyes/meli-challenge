@@ -22,7 +22,7 @@ a {
 
 input,
 button {
-  border:none;
+  border: none;
 }
 
 button {
@@ -40,6 +40,10 @@ ul {
 .container {
   height: auto;
   padding: 0 $safe-area;
+
+  @media screen and (max-width: $mobile-screen) {
+    padding: 0 1rem;
+  }
 }
 
 .content {

@@ -16,26 +16,26 @@ const conditionMap: Record<string, string> = {
 
 export const ItemDetail: FunctionComponent<{ item: Item }> = ({ item }) => (
   <div className={styles.wrapper}>
-    <div className={styles.detail}>
-      <div className={styles.image}>
-        <Image
-          src={item.picture}
-          alt={item.title}
-          layout="fill"
-          objectFit="contain"
-        />
-      </div>
-      <h3>Descripción del producto</h3>
-      <span>{item.description}</span>
+    <div className={styles.image}>
+      <Image
+        src={item.picture}
+        alt={item.title}
+        layout="fill"
+        objectFit="contain"
+      />
     </div>
     <div className={styles.purchaseInformation}>
       <span className={styles.condition}>
         {conditionMap[item.condition] && `${conditionMap[item.condition]} - `}
         {item.soldQuantity} vendidos
       </span>
-      <h2>{item.title}</h2>
+      <h2 className={styles.title}>{item.title}</h2>
       <ItemPrice price={item.price} variant="large" />
       <button className={styles.button}>Comprar</button>
+    </div>
+    <div className={styles.description}>
+      <h3>Descripción del producto</h3>
+      <span>{item.description}</span>
     </div>
   </div>
 );

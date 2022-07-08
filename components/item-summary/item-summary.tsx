@@ -13,7 +13,7 @@ export const ItemSummary: FunctionComponent<ItemSummaryProps> = ({
   item,
   onOpenItemDetail,
 }) => (
-  <div className={styles.wrapper}>
+  <div className={styles.wrapper} onClick={() => onOpenItemDetail(item.id)}>
     <div className={styles.thumbnail}>
       <Image
         src={item.picture}
@@ -22,7 +22,7 @@ export const ItemSummary: FunctionComponent<ItemSummaryProps> = ({
         objectFit="contain"
       />
     </div>
-    <div className={styles.summary} onClick={() => onOpenItemDetail(item.id)}>
+    <div className={styles.summary}>
       <div className={styles.amount}>
         <ItemPrice price={item.price} />
         {item.freeShipping && (
@@ -36,7 +36,7 @@ export const ItemSummary: FunctionComponent<ItemSummaryProps> = ({
           </span>
         )}
       </div>
-      <span>{item.title}</span>
+      <span className={styles.title}>{item.title}</span>
     </div>
     <div className={styles.stateName}>{item.address.stateName}</div>
   </div>

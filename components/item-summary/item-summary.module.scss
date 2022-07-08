@@ -1,9 +1,12 @@
+@import 'styles/utils';
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 16px;
   font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
 
   padding: 1rem;
   border-bottom: thin solid #eee;
@@ -12,10 +15,15 @@
     min-height: 10rem;
     min-width: 10rem;
     position: relative;
+    transition: 0.25s all linear;
+  
+    @media screen and (max-width: $mobile-screen) {
+      min-height: 5rem;
+      min-width: 5rem;
+    }
   }
   
   .summary {
-    cursor: pointer;
     height: min-content;
 
     .amount {
@@ -28,7 +36,15 @@
         min-width: 1rem;
         min-height: 1rem;
       }
-    }    
+    }
+    
+    .title {
+      transition: 0.25s all linear;
+    
+      @media screen and (max-width: $mobile-screen) {
+        font-size: 0.75rem;
+      }
+    }
   }
 
   .stateName {
