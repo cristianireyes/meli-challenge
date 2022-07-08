@@ -1,0 +1,12 @@
+.price {
+  display: flex;
+  gap: 0.25rem;
+  position: relative;
+  width: fit-content;
+}
+
+.decimals {
+  position: absolute;
+  right: -1rem;
+  font-size: 12px;
+}
