@@ -1,0 +1,6 @@
+@import 'utils';
+
+.searchResults {
+  background-color: map-get($colors, surface);
+  border-radius: 0.25em;
+}
