@@ -57,10 +57,13 @@ const SearchResultsPage: NextPage<SearchResultsPageProps> = ({
 
   const handleOpenItemDetail = useCallback(
     (id: string) => {
-      router.push({
-        pathname: `/items/${id}`,
-        query: { categories },
-      });
+      router.push(
+        {
+          pathname: `/items/${id}`,
+          query: { categories },
+        },
+        `/items/${id}`,
+      );
     },
     [categories, router],
   );
