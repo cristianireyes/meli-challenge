@@ -1,12 +1,26 @@
-.price {
+@mixin base {
   display: flex;
   gap: 0.25rem;
   position: relative;
   width: fit-content;
+
+  .decimals {
+    position: absolute;
+    right: -1rem;
+    font-size: 0.75rem;
+  }
 }
 
-.decimals {
-  position: absolute;
-  right: -1rem;
-  font-size: 12px;
+.price {
+  @include base;
+  font-size: 1.25rem;
+}
+
+.priceLarge {
+  @include base;
+  font-size: 2rem;
+
+  .decimals {
+    font-size: 0.875rem;
+  }
 }
