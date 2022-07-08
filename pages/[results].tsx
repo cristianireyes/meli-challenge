@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ItemSummary } from 'components/item-summary';
 import { Breadcrumb } from 'components/breadcrumb';
@@ -14,9 +15,17 @@ interface SearchResultsPageProps {
   items: Item[];
 }
 
-export const getServerSideProps: GetServerSideProps = async (
-  context,
-): Promise<{ props: SearchResultsPageProps }> => {
+export const getServerSideProps: GetServerSideProps = async context => {
+  if (!context.query.search) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/404',
+      },
+      props: {},
+    };
+  }
+
   const itemSearch: string = context.query.search as string;
 
   const res = await fetch(
@@ -57,8 +66,17 @@ const SearchResultsPage: NextPage<SearchResultsPageProps> = ({
   );
 
   if (!categories?.length || !items?.length) {
-    // TODO: add image
-    return <span>No se encontraron resultados</span>;
+    return (
+      <div className="page-placeholder">
+        <Image
+          src="/images/item-not-found.svg"
+          alt="Item no encontrado"
+          height="200px"
+          width="200px"
+        />
+        <p>No hay publicaciones que coincidan con tu búsqueda.</p>
+      </div>
+    );
   }
 
   return (

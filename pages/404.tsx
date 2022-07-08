@@ -2,22 +2,22 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
-const Home: NextPage = () => (
+const PageNotFound: NextPage = () => (
   <>
     <Head>
-      <title>Meli Challenge</title>
-      <meta name="description" content="Challenge for Meli" />
+      <title>Página no encontrada</title>
     </Head>
 
     <div className="page-placeholder">
       <Image
-        src="/images/placeholder-home.svg"
-        alt="Buscar articulos"
+        src="/images/404.svg"
+        alt="Página no encontrada"
         height="300px"
         width="300px"
       />
+      <p>Página no encontrada</p>
     </div>
   </>
 );
 
-export default Home;
+export default PageNotFound;
