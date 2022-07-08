@@ -1,0 +1,19 @@
+.breadcrumb {
+  display: flex;
+  color: #666;
+  font-size: 14px;
+}
+
+.categories {
+  display: flex;
+  padding-left: 0rem;
+  flex-wrap: wrap;
+  line-height: 1.25rem;
+}
+
+.category {
+  margin-right: 0.5rem;
+
+  &:after { content: " >"; }
+  &:last-child:after { content: ''; }
+}
