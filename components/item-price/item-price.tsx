@@ -21,6 +21,8 @@ export const ItemPrice: FunctionComponent<ItemPriceProps> = ({
   <div className={styleVariantMap[variant]}>
     <span>{CurrencyMap[price.currency]}</span>
     <span>{parsedAmount(price.amount)}</span>
-    <span className={styles.decimals}>{price.decimals}</span>
+    {price.decimals && (
+      <span className={styles.decimals}>{price.decimals}</span>
+    )}
   </div>
 );

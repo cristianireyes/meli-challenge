@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`item-price component should show the price of the item with Argentine currency 1`] = `
+<div>
+  <div
+    class="price"
+  >
+    <span>
+      $
+    </span>
+    <span>
+      20.000
+    </span>
+    <span
+      class="decimals"
+    >
+      20
+    </span>
+  </div>
+</div>
+`;
+
+exports[`item-price component should show the price of the item with decimals 1`] = `
+<div>
+  <div
+    class="price"
+  >
+    <span>
+      U$S
+    </span>
+    <span>
+      20.000
+    </span>
+    <span
+      class="decimals"
+    >
+      20
+    </span>
+  </div>
+</div>
+`;
+
+exports[`item-price component should show the price of the item without decimals 1`] = `
+<div>
+  <div
+    class="price"
+  >
+    <span>
+      U$S
+    </span>
+    <span>
+      20.000
+    </span>
+  </div>
+</div>
+`;

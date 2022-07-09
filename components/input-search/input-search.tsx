@@ -37,6 +37,7 @@ export const InputSearch: FunctionComponent<InputSearchProps> = ({
       />
       <button
         className={styles.icon}
+        aria-label="Buscar"
         type="submit"
         onClick={event => {
           event.preventDefault();
@@ -45,7 +46,6 @@ export const InputSearch: FunctionComponent<InputSearchProps> = ({
       >
         <Image
           src="/icons/ic_search.png"
-          aria-label="Buscar"
           alt="Buscar un articulo"
           width="20px"
           height="20px"

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`breadcrumb component should display a list of categories 1`] = `
+<div>
+  <div
+    class="breadcrumb"
+  >
+    <ul
+      class="categories"
+    >
+      <li
+        class="category"
+      >
+        Deportes y Fitness
+      </li>
+      <li
+        class="category"
+      >
+        Ciclismo
+      </li>
+      <li
+        class="category"
+      >
+        Bicicletas
+      </li>
+    </ul>
+  </div>
+</div>
+`;
